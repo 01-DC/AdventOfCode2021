@@ -19,4 +19,4 @@ for line in full_input:
     if line_score!=0:
         total_score.append(line_score)
 total_score.sort()
-print(total_score[int(len(total_score)/2)])
+print(total_score[len(total_score)//2])
