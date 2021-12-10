@@ -9,11 +9,11 @@ for line in full_input:
     for ch in list(line):
         if '([{<'.find(ch)>-1:
             stack.append(braces[ch])
+        elif ch!=stack[-1]:
+            stack.clear()
+            break
         else:
-            temp= stack.pop()
-            if ch!=temp:
-                stack.clear()
-                break
+            stack.pop()
     for ch in stack[::-1]:
         line_score= (line_score*5)+ points[ch]
     if line_score!=0:

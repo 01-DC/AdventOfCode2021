@@ -8,11 +8,10 @@ for line in full_input:
     for ch in list(line):
         if '([{<'.find(ch)>-1:
             stack.append(ch)
+        elif braces[ch]==stack[-1]:
+            stack.pop()
         else:
-            temp= stack.pop()
-            if braces[ch]==temp:
-                continue
-            ans+= points[ch]
+            ans+=points[ch]
             break
 
 print(ans)
